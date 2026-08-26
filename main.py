@@ -1,4 +1,5 @@
 from pathlib import Path
+from datetime import date
 
 
 from models.meeting import Meeting
@@ -11,7 +12,8 @@ def main() -> None:
     file_path_text = input("Введите путь к аудиофайлу: ").strip()
     audio_path = Path(file_path_text)
 
-    meeting = Meeting(audio_path)
+    meeting_data = date.today()
+    meeting = Meeting(audio_path, meeting_data)
 
     recognizer = SpeechRecognizer()
     analyzer = MeetingAnalyzer()
