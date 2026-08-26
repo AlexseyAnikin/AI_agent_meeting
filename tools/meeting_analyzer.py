@@ -13,5 +13,15 @@ class MeetingAnalyzer:
                 task_data["deadline"],
                 task_data["priority"]
             )
-            
+
             tasks.append(task)
+
+        report = MeetingReport(
+            data["topic"],
+            data["summary"],
+            data["participants"],
+            data["decisions"],
+            tasks,
+            data["open_questions"])
+
+        return report
